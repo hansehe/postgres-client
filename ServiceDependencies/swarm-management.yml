@@ -1,0 +1,12 @@
+networks: 
+    backend_network: false
+
+volumes:
+    postgres_source_data:
+    postgres_target_data:
+    pgadmin_data:
+
+stacks:
+    postgres_source: docker-compose.postgres_source.yml
+    postgres_target: docker-compose.postgres_target.yml
+    pgadmin: docker-compose.pgadmin.yml

@@ -1,0 +1,27 @@
+build:
+  selections:
+    service:
+      additionalTag: latest
+      files:
+        - docker-compose.yml
+
+run:
+  selections:
+    service:
+      additionalTag: latest
+      files:
+        - docker-compose.yml
+
+publish:
+  selections:
+    service:
+      additionalTag: latest
+      files:
+        - docker-compose.yml
+
+swarm:
+  selections:
+    service:
+      directory: ServiceDependencies
+      files:
+        - swarm-management.yml

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  postgres-db-pgadmin:
+    image: dpage/pgadmin4:4.28
+    hostname: postgres-pgadmin
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.no
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - 8080:80
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true
+
+volumes:
+  pgadmin_data:
+    external: true

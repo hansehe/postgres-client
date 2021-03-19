@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  postgres-db-source:
+    image: postgres:11.10
+    hostname: postgres-db-source
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres_source
+      PGDATA: /var/lib/postgresql/data/dbdata
+    volumes:
+      - postgres_source_data:/var/lib/postgresql/data/dbdata
+    ports:
+      - 5432:5432
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true
+
+volumes:
+  postgres_source_data:
+    external: true

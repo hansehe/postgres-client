@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  postgres-client:
+    image: hansehe/postgres-client:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
