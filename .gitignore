@@ -12,6 +12,7 @@ output/
 temp/
 PWD.env
 private.env
+private.md
 docker-compose.build.*.yml
 docker-compose.run.*.yml
 docker-compose.test.*.yml
