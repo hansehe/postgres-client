@@ -16,6 +16,9 @@ publish:
   selections:
     service:
       additionalTag: latest
+      platforms:
+          - linux/amd64
+          - linux/arm64
       files:
         - docker-compose.yml
 
