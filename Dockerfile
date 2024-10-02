@@ -1,7 +1,9 @@
-FROM python:3.11-buster
+FROM python:3.12
 
-RUN apt-get update -y
-RUN apt-get install postgresql-client -y
+# https://www.postgresql.org/download/linux/ubuntu/
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install postgresql-client -y
 
 WORKDIR /src
 
